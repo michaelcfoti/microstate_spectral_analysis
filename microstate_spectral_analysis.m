@@ -17,9 +17,7 @@ microstateLabels = arrayfun(@(x) char('A' + x - 1), 1:param.nCluster, 'UniformOu
 % ======== Example running all conditions ========
 for i = 1:numel(conditions)
     F{i} = lombScargleSpectrum(GFP, labels, conditions{i}, param);
-    
     meanSlope(i,:) = computeSlope(F{i}, [1 8]);
-  
     plotMicrostateSpectra(F{i}, param.nCluster, titles{i});
 end
 
