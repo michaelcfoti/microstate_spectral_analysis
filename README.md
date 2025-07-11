@@ -1,1 +1,1 @@
-# microstate-spectral-analysis
+# Microstate spectral analysis
