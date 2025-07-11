@@ -1,6 +1,5 @@
-function plotMicrostateSpectra(F, nCluster, mainTitle)
+function plotMicrostateSpectra(F,xLabels, nCluster, mainTitle)
 
-    xLabels = numberToAlphabet(nCluster);
     fig = figure;
     set(fig, 'Position', [1 992 1199 211]);
 
