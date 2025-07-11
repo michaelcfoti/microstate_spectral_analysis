@@ -20,9 +20,9 @@ This repository computes the spectral power of **Global Field Power (GFP)** asso
 
 The analysis requires the following:
 
-- **Number of microstates**  
-- **Sampling frequency** (Hz)  
-- **Maximum frequency** for spectral analysis (Hz)
+- Number of microstates  
+- Sampling frequency (Hz)  
+- Maximum frequency for spectral analysis (Hz)
 
 
 ## Shuffling Conditions
