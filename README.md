@@ -1,6 +1,6 @@
 # Microstate spectral analysis
 
-The Global Field Power (GFP) reflects the instantaneous strength of EEG microstates. This repository computes the spectral power of GFP associated with microstate sequences using Lomb–Scargle periodograms and uncovers its scale-free properties.
+The Global Field Power (GFP) reflects the instantaneous strength of the EEG signal across the scalp and is obtained as the standard deviation of potentials across electrodes.This repository computes the spectral power of GFP associated with microstate sequences using Lomb–Scargle periodograms and uncovers its scale-free properties.
 
 It includes three analysis conditions to examine how spectral properties depend on the temporal structure of the data:
 
