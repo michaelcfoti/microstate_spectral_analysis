@@ -1,4 +1,5 @@
-clear; clc; close all;
+clear; clc;close all; 
+
 addpath(genpath('./functions'));
 
 load('data/sample_data.mat');
@@ -14,7 +15,6 @@ titles = {'Unshuffled', 'GFP shuffled', 'Labels shuffled'};
 microstateLabels = arrayfun(@(x) char('A' + x - 1), 1:param.nCluster, 'UniformOutput', false);
 
 % ======== Example running all conditions ========
-
 for i = 1:numel(conditions)
     F{i} = lombScargleSpectrum(GFP, labels, conditions{i}, param);
     meanSlope(i,:) = computeSlope(F{i}, [1 8]);

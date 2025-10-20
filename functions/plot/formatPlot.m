@@ -8,5 +8,5 @@ ax.XTickLabelRotation = 0;
 
 xlabel('Frequencies (log)');
 ylabel('Power (dB)');
-ylim([-5 3]);
+ ylim([-5 6]);
 end
