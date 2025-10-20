@@ -28,3 +28,6 @@ The analysis requires the following:
 ## Shuffling Conditions
 
 <img src="img/shuffling_conditions.png" width="550"/>
+
+## Contact
+michael-christopher.foti.1@ens.etsmtl.ca
