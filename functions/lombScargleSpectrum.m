@@ -36,7 +36,9 @@ for i = 1:nCluster
         [GFPepo, idx] = processMicrostate(GFPepo, labelEpo, i, analysis);
 
         if ~isempty(idx)
-            % [pow, fre] = plomb(GFPepo(idx), time(idx), freq); % from MATLAB
+            % [pow, fre] = plomb(GFPepo(idx), time(idx), freq); % using MATLAB
+
+            % pow = lombScargle(GFPepo(idx), time(idx), freq, 'normalize);
             pow = lombScargle(GFPepo(idx), time(idx), freq);
 
             F.po{i}(j,:) = pow;

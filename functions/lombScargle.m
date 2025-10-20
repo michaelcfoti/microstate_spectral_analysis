@@ -1,4 +1,4 @@
-function P = lombScargle(x, t, f)
+function P = lombScargle(x, t, f, mode)
 % implementation of LombScargle
 %
 % INPUTS:
@@ -11,6 +11,14 @@ function P = lombScargle(x, t, f)
 % OUTPUTS:
 %     - P: Lomb Scargle Power 
 
+    if nargin < 4 || isempty(mode)
+        mode = 'none';
+    end
+    
+    validModes = {'none','normalize'};
+    if ~any(strcmpi(mode, validModes))
+        error('Invalid mode "%s". Valid options: ''normalize'' or [].', mode);
+    end
 
     if any(isnan(x)) || any(isnan(t)) || any(isnan(f))
         error('Inputs cannot contain NaN values.');
@@ -61,5 +69,10 @@ function P = lombScargle(x, t, f)
 
     % LombScargle equation
     P = 0.5 * (Af.^2 .* Xc.^2 + Bf.^2 .* Xs.^2).';
+
+    if strcmpi(mode, 'normalize')
+        P = P./(2* var(x,1));
+    end
+
 end
 
