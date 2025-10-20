@@ -14,6 +14,7 @@ conditions = {'unshuffled','gfp_shuffled', 'labels_shuffled'};
 validateCondition(conditions);
 microstateLabels = arrayfun(@(x) char('A' + x - 1), 1:param.nCluster, 'UniformOutput', false);
 
+
 % ======== Example running all conditions ========
 for i = 1:numel(conditions)
 
