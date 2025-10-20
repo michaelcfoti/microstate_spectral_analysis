@@ -27,4 +27,4 @@ The analysis requires the following:
 
 ## Shuffling Conditions
 
-![Shuffling Conditions](img/shuffling_conditions.png)
+<img src="img/shuffling_conditions.png" width="550"/>
