@@ -1,6 +1,8 @@
 # Microstate spectral analysis
 
-This repository computes the spectral power of **Global Field Power (GFP)** associated with microstate sequences using **Lomb-Scargle periodograms**. It includes three analysis conditions to examine how spectral properties depend on the temporal structure of the data:
+The Global Field Power (GFP) reflects the instantaneous strength of EEG microstates. This repository computes the spectral power of GFP associated with microstate sequences using Lomb–Scargle periodograms and uncovers its scale-free properties.
+
+It includes three analysis conditions to examine how spectral properties depend on the temporal structure of the data:
 
 - Unshuffled: Original GFP and microstate label sequences
 
