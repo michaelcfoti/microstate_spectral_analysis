@@ -1,5 +1,10 @@
 function meanSlope = computeSlope(F, freqRange)
 
+% computeSlope: mock slope calculation using a simple linear regression.
+% Users should ideally use FOOOF, but here we use a simple log-log linear fit
+% to estimate the 1/f spectral slope within a given frequency range.
+
+
 nCluster = numel(F.po);
 nEpo = size(F.po{1}, 1);
 slope = NaN(nCluster, nEpo);
@@ -17,6 +22,6 @@ for i = 1:nCluster
     end
 
 end
-meanSlope = mean(slope,2);
+meanSlope = mean(slope,2, 'omitnan');
 
 end

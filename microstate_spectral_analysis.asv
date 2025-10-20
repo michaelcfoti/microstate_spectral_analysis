@@ -10,6 +10,9 @@ param.nCluster = 5;
 
 printInputSummary(GFP, param);
 
+
+% Valid condiion : 'unshuffled', 'gfp_shuffled', 'labels_shuffled'};
+
 conditions = {'unshuffled','gfp_shuffled', 'labels_shuffled'};
 validateCondition(conditions);
 microstateLabels = arrayfun(@(x) char('A' + x - 1), 1:param.nCluster, 'UniformOutput', false);
@@ -17,15 +20,8 @@ microstateLabels = arrayfun(@(x) char('A' + x - 1), 1:param.nCluster, 'UniformOu
 % ======== Example running all conditions ========
 for i = 1:numel(conditions)
 
-    fprintf('\n Running: %s', conditions{i}) 
+    % fprintf('running: ') print slope 
     F{i} = lombScargleSpectrum(GFP, labels, conditions{i}, param);
-
-    % Users should ideally use FOOOF, but here we use a simple log-log
-    % linear fit to calculate the scaling exponent
     meanSlope(i,:) = computeSlope(F{i}, [1 8]);
-    printSlope(meanSlope(i,:), microstateLabels, param)   
-
     plotMicrostateSpectra(F{i},microstateLabels, param.nCluster, conditions{i});
-
 end
-

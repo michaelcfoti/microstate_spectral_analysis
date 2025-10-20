@@ -36,7 +36,7 @@ for i = 1:nCluster
         [GFPepo, idx] = processMicrostate(GFPepo, labelEpo, i, analysis);
 
         if ~isempty(idx)
-             % [pow, fre] = plomb(GFPepo(idx), time(idx), freq);
+            % [pow, fre] = plomb(GFPepo(idx), time(idx), freq); % from MATLAB
             pow = lombScargle(GFPepo(idx), time(idx), freq);
 
             F.po{i}(j,:) = pow;
@@ -46,48 +46,3 @@ for i = 1:nCluster
 end
 
 end
-
-
-%%
-% function P = lombScargle(x, t, f)
-% 
-%     if ~isvector(x) || ~isvector(t) || ~isvector(f)
-%         error('Inputs x, t, and f must all be vectors.');
-%     end
-% 
-%    % column-ize
-%     x = x(:);
-%     t = t(:);
-%     f = f(:);
-% 
-%     % de-mean the data
-%     x = x - mean(x);
-% 
-%     % angular frequencies (row)
-%     omega = 2*pi*f.';            % 1×M
-% 
-%     % precompute ω t (N×M)
-%     wt = t * omega;              % (N×1)*(1×M) -> N×M
-% 
-%     % compute  Tau
-%     two_wt = 2*wt;
-%     S2 = sum(sin(two_wt), 1);    % 1×M
-%     C2 = sum(cos(two_wt), 1);    % 1×M
-%     tau = atan2(S2, C2) ./ (2 * omega);
-% 
-%     % compute Af and Bf
-%     wtau = omega .* tau;        
-%     wt_tau = wt - wtau;          
-%     c = cos(wt_tau);             
-%     s = sin(wt_tau);            
-%     Af = 1./sqrt(sum(c.^2, 1));        
-%     Bf = 1./sqrt(sum(s.^2, 1));        
-% 
-%     % projections
-%     Xc = sum(x .* c, 1);         % 1×M
-%     Xs = sum(x .* s, 1);         % 1×M
-% 
-%     % LombScargle equation
-%     P = 0.5 * (Af.^2 .* Xc.^2 + Bf.^2 .* Xs.^2).';
-% end
-% 

@@ -1,4 +1,16 @@
 function P = lombScargle(x, t, f)
+% implementation of LombScargle
+%
+% INPUTS:
+%     - x: signal ( in this case the Global field power)
+%
+%     - t:  time vector
+%
+%     - f: frequency vector 
+%       
+% OUTPUTS:
+%     - P: Lomb Scargle Power 
+
 
     if any(isnan(x)) || any(isnan(t)) || any(isnan(f))
         error('Inputs cannot contain NaN values.');
